@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSort - AI Waste Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <a href="/" class="brand">♻ EcoSort</a>
+        <span>AI Waste Classifier</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="tag">SMART WASTE MANAGEMENT</p>
+            <h1>Give your waste a <span>second life.</span></h1>
+            <p>Upload a waste image and let AI predict its category.</p>
+        </section>
+
+        <section class="card">
+            <h2>Upload waste image</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <input
+                    type="file"
+                    name="image"
+                    accept="image/png,image/jpeg"
+                    required
+                >
+                <button type="submit">Classify Waste →</button>
+            </form>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </section>
+
+        {% if result %}
+        <section class="card result">
+            <p class="tag">PREDICTION RESULT</p>
+            <img src="{{ image_url }}" alt="Uploaded waste">
+            <h2>{{ result.category }}</h2>
+            <p>Model score: {{ result.confidence }}%</p>
+            <p>{{ result.advice }}</p>
+            <small>AI predictions may be incorrect. Follow local disposal rules.</small>
+        </section>
+        {% endif %}
+
+        <section class="categories">
+            <h2>Supported waste categories</h2>
+            <div class="grid">
+                <div>📦<br>Cardboard</div>
+                <div>🍾<br>Glass</div>
+                <div>🥫<br>Metal</div>
+                <div>📄<br>Paper</div>
+                <div>🧴<br>Plastic</div>
+                <div>🗑️<br>Trash</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>EcoSort | Python + Flask + TensorFlow</footer>
+</body>
+</html>

@@ -1,0 +1,157 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f7f3;
+    color: #19372a;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: white;
+    border-bottom: 1px solid #e1ebe3;
+}
+
+.brand {
+    color: #16834a;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header span {
+    color: #65766b;
+    font-size: 14px;
+}
+
+main {
+    width: min(850px, 92%);
+    margin: auto;
+    padding: 30px 0;
+}
+
+.hero {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 6vw, 48px);
+    margin: 12px 0;
+}
+
+.hero h1 span, .tag {
+    color: #16834a;
+}
+
+.hero p {
+    line-height: 1.6;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    margin: 22px 0;
+    border: 1px solid #e1ebe3;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #19372a0a;
+    text-align: center;
+}
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+}
+
+button {
+    background: #16834a;
+    color: white;
+    border: 0;
+    padding: 14px 20px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #106b3b;
+}
+
+.result img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin: 18px auto;
+}
+
+.result h2 {
+    color: #16834a;
+}
+
+.result p {
+    line-height: 1.6;
+}
+
+.result small {
+    color: #65766b;
+}
+
+.error {
+    color: #b42318;
+}
+
+.categories {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.grid div {
+    background: white;
+    border: 1px solid #e1ebe3;
+    border-radius: 12px;
+    padding: 20px 8px;
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #65766b;
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
